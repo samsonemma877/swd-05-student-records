@@ -103,6 +103,69 @@ h1 {
     text-decoration: none;
 }
 
+.button-secondary {
+    border-color: #cbd5e1;
+    background: #fff;
+    color: #334155;
+}
+
+.button-secondary:hover {
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.student-form {
+    display: grid;
+    gap: 20px;
+    max-width: 720px;
+    padding: 24px;
+}
+
+.form-field {
+    display: grid;
+    gap: 7px;
+}
+
+.form-field label {
+    color: #334155;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: #fff;
+    color: #1e293b;
+    font: inherit;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    border-color: #2563eb;
+    outline: 3px solid rgb(37 99 235 / 14%);
+}
+
+.form-field [aria-invalid="true"] {
+    border-color: #dc2626;
+}
+
+.field-error {
+    color: #b91c1c;
+    font-size: 0.85rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 4px;
+}
+
 .panel {
     overflow: hidden;
     border: 1px solid #e2e8f0;
