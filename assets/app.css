@@ -215,12 +215,58 @@ h1 {
 
 .actions {
     display: flex;
+    align-items: center;
     gap: 14px;
     white-space: nowrap;
 }
 
+.actions form {
+    margin: 0;
+}
+
 .action-delete {
     color: #dc2626;
+}
+
+.action-button {
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    color: #b91c1c;
+    text-decoration: underline;
+}
+
+.student-details {
+    max-width: 720px;
+    margin: 0;
+    padding: 8px 24px;
+}
+
+.student-details > div {
+    display: grid;
+    grid-template-columns: minmax(130px, 1fr) 2fr;
+    gap: 16px;
+    padding: 15px 0;
+    border-bottom: 1px solid #edf1f6;
+}
+
+.student-details > div:last-child {
+    border-bottom: 0;
+}
+
+.student-details dt {
+    color: #64748b;
+    font-weight: 600;
+}
+
+.student-details dd {
+    margin: 0;
+    overflow-wrap: anywhere;
 }
 
 .empty-state {

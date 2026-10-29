@@ -56,8 +56,10 @@ require __DIR__ . '/partials/header.php';
                 <tbody>
                     <?php foreach ($students as $student): ?>
                         <tr>
-                            <td class="student-name">
-                                <?= e(trim($student['first_name'] . ' ' . $student['last_name'])) ?>
+                            <td>
+                                <a class="student-name" href="show.php?id=<?= e($student['id']) ?>">
+                                    <?= e(trim($student['first_name'] . ' ' . $student['last_name'])) ?>
+                                </a>
                             </td>
                             <td><?= e($student['email']) ?></td>
                             <td><?= e($student['course']) ?></td>
@@ -70,7 +72,16 @@ require __DIR__ . '/partials/header.php';
                             <td>
                                 <div class="actions">
                                     <a href="edit.php?id=<?= e($student['id']) ?>">Edit</a>
-                                    <a class="action-delete" href="delete.php?id=<?= e($student['id']) ?>">Delete</a>
+                                    <form
+                                        method="post"
+                                        action="delete.php"
+                                        data-confirm="<?= e('Delete ' . trim($student['first_name'] . ' ' . $student['last_name']) . '?') ?>"
+                                        onsubmit="return confirm(this.dataset.confirm)"
+                                    >
+                                        <input type="hidden" name="csrf_token" value="<?= e(csrfToken()) ?>">
+                                        <input type="hidden" name="id" value="<?= e($student['id']) ?>">
+                                        <button class="action-delete action-button" type="submit">Delete</button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>
